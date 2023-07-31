@@ -42,6 +42,7 @@ Route::group(['prefix' => 'developer', 'middleware' => 'CheckDeveloper'], functi
     Route::post('/add-game', [GameController::class, 'store']);
     Route::get('/edit-game/{game_id}', [GameController::class, 'edit']);
     Route::put('/update-game', [GameController::class, 'update']);
+    Route::delete('/delete-game/{game_id}', [GameController::class, 'destroy']);
 });
 
 

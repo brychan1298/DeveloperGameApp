@@ -66,4 +66,12 @@ class GameController extends Controller
 
         return view('buyer.store', compact('games'));
     }
+
+    public function destroy($game_id){
+        $game = Game::find($game_id);
+        Storage::delete($game->image);
+        $game->delete();
+
+        return redirect('/developer');
+    }
 }
